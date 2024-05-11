@@ -12,3 +12,37 @@ azubi_store = [
 # Create the dataframe from the dictionary above
 df = pd.DataFrame(azubi_store)
 df
+
+# profit for each product
+
+df["net_revenue_per_product"] = (df["retail_price"] - df["wholesale_Price"]) * df["sales"]
+df   
+
+# How much total net revenue from all sales
+
+total_net_revenue = df["net_revenue_per_product"].sum()
+total_net_revenue
+
+# what product is product retail price more than twice the wholesale price?
+
+wp = df["wholesale_Price"] * 2 
+product = df[df["retail_price"] >= wp]
+product
+
+
+# food vs computers vs books
+# food
+ba_sa = df[df["name"].str.contains("Banana|Sandwich")] 
+food = ba_sa["sales"].sum()
+
+# computers
+com = df[df["name"].str.contains("Computer")]
+computers = com["sales"].sum()
+
+# books
+bo = df[df["name"].str.contains("Python Workout|Pandas Workout")]
+books = bo["sales"].sum()
+
+print(f'Total sales for food is ${food}')
+print(f'Total sales for computer is ${computers}')
+print(f'Total sales for books is ${books}')
