@@ -46,3 +46,34 @@ books = bo["sales"].sum()
 print(f'Total sales for food is ${food}')
 print(f'Total sales for computer is ${computers}')
 print(f'Total sales for books is ${books}')
+
+# 30% discount negotation on wholesale_price
+
+df["Discount"] = df["wholesale_Price"] * 0.3
+df["Discount"] 
+df
+
+
+# Government imposed tax of 15%, 20% and 25% 
+
+df["Tax15%"] = df["net_revenue_per_product"] * 0.15
+# df["Discount15"] 
+
+df["Tax20%"] = df["net_revenue_per_product"] * 0.2
+# df["Discount20%"] 
+
+df["Tax25%"] = df["net_revenue_per_product"] * 0.25
+# df["Discount25%"] 
+
+df
+
+# how much less you will net with each tax amount
+# where nrpp stands for net_revenue_per_product
+
+df["loss_at15%"] = df["net_revenue_per_product"] - df["Tax15%"]
+
+df["loss_at20%"] = df["net_revenue_per_product"] - df["Tax20%"]
+
+df["loss_at25%"] = df["net_revenue_per_product"] - df["Tax25%"]
+
+df
