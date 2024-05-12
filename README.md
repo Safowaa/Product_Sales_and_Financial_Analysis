@@ -10,10 +10,10 @@ Analyzes sales data for various products, calculates net revenues, applies disco
 ## Visualizations
 
 ### Revenue and Tax Impact
-![Revenue and Tax Impact Visualization](URL_TO_IMAGE_HERE "Net Revenue and Tax Impact")
+![Revenue and Tax Impact Visualization](https://github.com/Safowaa/Product_Sales_and_Financial_Analysis/blob/b1317757d58928e0851418433e00aa3e551a6070/Visuals/R_T_V.png "Net Revenue and Tax Impact")
 
 ### Product Category Sales
-![Product Category Sales Visualization](URL_TO_IMAGE_HERE "Sales by Category")
+![Product Category Sales Visualization](https://github.com/Safowaa/Product_Sales_and_Financial_Analysis/blob/b1317757d58928e0851418433e00aa3e551a6070/Visuals/P_C_S_V.png "Sales by Category")
 
 ## How to Use
 
