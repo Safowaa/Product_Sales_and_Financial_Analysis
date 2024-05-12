@@ -77,3 +77,43 @@ df["loss_at20%"] = df["net_revenue_per_product"] - df["Tax20%"]
 df["loss_at25%"] = df["net_revenue_per_product"] - df["Tax25%"]
 
 df
+
+import matplotlib.pyplot as plt
+
+# Create a new figure and set its size
+plt.figure(figsize=(10, 6))
+
+# Bar chart for net revenue per product before tax
+plt.bar(df['name'], df['net_revenue_per_product'], label='Net Revenue')
+
+# Stacked bars for each tax scenario
+plt.bar(df['name'], df['loss_at15%'], label='Net after 15% Tax', color='red', alpha=0.6)
+plt.bar(df['name'], df['loss_at20%'], label='Net after 20% Tax', color='blue', alpha=0.6)
+plt.bar(df['name'], df['loss_at25%'], label='Net after 25% Tax', color='green', alpha=0.6)
+
+plt.xlabel('Product')
+plt.ylabel('Revenue ($)')
+plt.title('Revenue and Tax Impact Visualization')
+plt.legend()
+
+plt.xticks(rotation=45)  # Rotate product names for better visibility
+plt.tight_layout()
+plt.show()
+
+
+import seaborn as sns
+
+# Create a DataFrame to hold summary data
+category_sales = pd.DataFrame({
+    'Category': ['Food', 'Computers', 'Books'],
+    'Sales': [food, computers, books]
+})
+
+# Create a bar plot
+plt.figure(figsize=(8, 5))
+sns.barplot(x='Category', y='Sales', data=category_sales, palette='viridis')
+
+plt.title('Product Category Sales Visualization')
+plt.xlabel('Product Category')
+plt.ylabel('Total Sales')
+plt.show()
